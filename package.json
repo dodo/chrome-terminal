@@ -1,0 +1,16 @@
+{
+    "name": "browser-link",
+    "version": "1.0.0",
+    "description": "",
+    "main": " ",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "author": "",
+    "license": "none",
+    "dependencies": {
+        "express": "^4.13.3",
+        "body-parser": "^1.13.3"
+    }
+}

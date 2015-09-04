@@ -1,0 +1,22 @@
+  {
+    "name": "watch dog",
+    "version": "0.0.0",
+    "description": "foobar",
+
+    "permissions": [
+        "http://*/*" ,
+        "contextMenus"
+    ],
+
+    "background": {
+        "scripts": [
+            "background.js"
+        ]
+    },
+
+    "icons": {
+        "32": "mpv-favicon.png",
+        "128": "mpv-logo.png"
+    },
+    "manifest_version": 2
+}
