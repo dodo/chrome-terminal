@@ -10,9 +10,29 @@
             margin: 0;
             background: #111;
         }
+        button {
+            border: none;
+            border-radius: 0;
+            background: rgba(0,0,0,0.3);
+            padding: 2px 6px 2px 6px;
+            margin: 0;
+            color: #444;
+            outline: none;
+            margin-left: 4px;
+            cursor: pointer;
+        }
+        input {
+            background: rgba(255,255,255,0.3);
+            color: #fff;
+            text-align: left;
+            border: 0;
+            outline: none;
+            font-family: 'sans';
+            min-width: 42em;
+        }
         #terminal {
             position: fixed;
-            top: 32px;
+            top: 38px;
             bottom: 0;
             right: 0;
             left: 0;
@@ -23,8 +43,8 @@
     </head>
     <body>
         <input id='input-cmd' type='text' placeholder="command …"/>
+        <button id='execute-button'>execute</button></br>
         <input id='input-cwd' type='text' placeholder="command working directory …"/>
-        <button id='execute-button'>execute</button>
         <div id='terminal'></div>
     </body>
 </html>
