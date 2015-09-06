@@ -1,0 +1,27 @@
+ <!DOCTYPE html>
+<html>
+    <head>
+        <title>terminal context menu options</title>
+        <link href="./style.css" rel="stylesheet" />
+        <style>
+            input {
+                min-width: 24em;
+            }
+        </style>
+    </head>
+    <body>
+        <button id='add-button'>add new command</button>
+        <p>you can use onclick event keys from chrome context menu prefixed with '%' to get its value replaced into the command when the context menu entry is clicked.</p>
+        <template id="command-template">
+            <div id="command-{i}">
+                <input name='name' type='text' placeholder="name …"/>
+                <input name='cmd' type='text' placeholder="command …"/>
+                <input name='cwd' type='text' placeholder="command working directory …"/>
+                <button name='delete-button' title="delete">❌</button>
+            <div>
+        </template>
+    </body>
+</html>
+<script src="./options.js"></script>
+<script src="./util.js"></script>
+

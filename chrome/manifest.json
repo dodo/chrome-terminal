@@ -14,15 +14,19 @@
         "contextMenus"
     ],
 
+    "options_page": "options.html",
     "background": {
         "scripts": [
+            "util.js",
             "background.js"
         ]
     },
 
     "icons": {
-        "32": "mpv-favicon.png",
-        "128": "mpv-logo.png"
+        "16": "logo16.png",
+        "32": "logo32.png",
+        "128": "logo128.png",
+        "512": "logo512.png"
     },
     "manifest_version": 2
 }

@@ -1,25 +1,6 @@
 
-chrome.contextMenus.create({
-    title: "play",
-    type: "normal",
-    contexts: ['video','link'],
-    onclick:function (ev) {
+// create/update context menu item ids
+localStorage['commands'] = JSON.stringify(
+    JSON.parse(localStorage['commands'] || '[]').map(createContextMenuItem)
+)
 
-        var port = chrome.runtime.connectNative('localhost.command.execute')
-
-        port.onMessage.addListener(function (message) {
-            if (message.error) {
-                console.error(message.error)
-            } else if (message.closed) {
-                port.disconnect()
-            }
-        })
-
-        port.postMessage({
-            spawn: "./youtube-mplayer",
-            args: [ev.linkUrl],
-            opts: {cwd:"/home/dodo/.zsh/scripts"},
-        })
-
-    },
-});
