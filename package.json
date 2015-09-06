@@ -10,7 +10,10 @@
     "author": "",
     "license": "none",
     "dependencies": {
+        "term.js": "^0.0.7",
+        "node-uuid": "^1.4.3",
         "express": "^4.13.3",
-        "body-parser": "^1.13.3"
+        "body-parser": "^1.13.3",
+        "chrome-native-messaging": "^0.2.0"
     }
 }

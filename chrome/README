@@ -1,0 +1,8 @@
+
+
+ localhost.linux4every1.free.zsh.json has to be in either:
+     $HOME/.config/chromium/NativeMessagingHosts
+     $HOME/.config/google-chrome/NativeMessagingHosts
+     $HOME/.config/google-chrome-beta/NativeMessagingHosts
+     /etc/chromium/native-messaging-hosts
+     /etc/opt/chrome/native-messaging-hosts

@@ -1,0 +1,9 @@
+{
+  "name": "localhost.command.execute",
+  "description": "execute commands via native messaging in chrome",
+  "path": "/home/dodo/code/javascript/browser-link/chrome/execute.js",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://gmeboamodgpgigapainjfmdenkndhkih/"
+  ]
+}

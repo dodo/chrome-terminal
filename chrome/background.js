@@ -4,12 +4,22 @@ chrome.contextMenus.create({
     type: "normal",
     contexts: ['video','link'],
     onclick:function (ev) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "http://localhost:4242/play", true);
-        xhr.setRequestHeader("Content-type", "application/json");
-        xhr.send(JSON.stringify({
-            url:ev.linkUrl,
-            src:ev.srcUrl,
-        }));
+
+        var port = chrome.runtime.connectNative('localhost.command.execute')
+
+        port.onMessage.addListener(function (message) {
+            if (message.error) {
+                console.error(message.error)
+            } else if (message.closed) {
+                port.disconnect()
+            }
+        })
+
+        port.postMessage({
+            spawn: "./youtube-mplayer",
+            args: [ev.linkUrl],
+            opts: {cwd:"/home/dodo/.zsh/scripts"},
+        })
+
     },
 });

@@ -1,10 +1,16 @@
   {
-    "name": "watch dog",
+    "name": "terminal",
     "version": "0.0.0",
     "description": "foobar",
 
+    "app": {
+        "launch": {
+            "local_path": "terminal.html"
+        }
+    },
+
     "permissions": [
-        "http://*/*" ,
+        "nativeMessaging",
         "contextMenus"
     ],
 
