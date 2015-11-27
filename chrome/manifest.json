@@ -9,6 +9,7 @@
         }
     },
 
+    "incognito": "spanning",
     "permissions": [
         "nativeMessaging",
         "contextMenus"
