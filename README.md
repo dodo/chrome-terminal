@@ -23,3 +23,5 @@ npm install .
 ```
 
 * Start adding commands via extension's `Options` to your context menu.
+
+Note: if you getting `LaunchProcess: failed to execvp:` try adjusting the sheebang in execute.js

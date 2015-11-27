@@ -1,6 +1,4 @@
-#!/home/dodo/.nvm/versions/node/v0.12.7/bin/node
-//#!/bin/bash
-//':' //; exec "$(command -v node || command -v nodejs)" "$0" "$@"
+#!exec "$(command -v node || command -v nodejs)" "$0" "$@"
 
 var uuid = require('node-uuid')
 var spawn = require('pty.js').spawn
