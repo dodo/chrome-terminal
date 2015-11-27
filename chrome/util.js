@@ -65,11 +65,17 @@ function executeCommand(command, ev) {
     .filter(function (s) {return !!s})
     .map(function (arg) {
         return arg.replace(/\%(\w+)/g, function (m,key) {
-            return ev[key] || ""
+            var val = ev[key] || ""
+            if (command.creds && command.creds.user) {
+                var part = command.creds.user
+                if (command.creds.password) part += ':' + command.creds.password
+                val = val.replace(/^([^/]+):\/\//, '$1://'+part+'@')
+            }
+            return val
         }).trim()
     })
     message.spawn = message.args.shift()
-    if (command.cwd) message.opts = {cwd:command.cwd}
+    if (command.cwd) message.opts = {cwd:command.cwd,name:'xterm'}
 
     if (!message.spawn) return
     console.log('post message', message)
