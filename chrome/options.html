@@ -10,8 +10,8 @@
         </style>
     </head>
     <body>
-        <button id='add-button'>add new command</button>
-        <p>you can use onclick event keys from chrome context menu prefixed with '%' to get its value replaced into the command when the context menu entry is clicked.</p>
+        <p>you can use onclick event keys from chrome context menu prefixed with '%' to get its value replaced into the command when the context menu entry is clicked.<br>
+        possible keys are: linkUrl, srcUrl, pageUrl, frameUrl, mediaType, selectionText</p>
         <template id="command-template">
             <div id="command-{i}">
                 <input name='name' type='text' placeholder="name …"/>
@@ -20,6 +20,7 @@
                 <button name='delete-button' title="delete">❌</button>
             <div>
         </template>
+        <button id='add-button'>add new command</button>
     </body>
 </html>
 <script src="./options.js"></script>

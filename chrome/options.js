@@ -49,7 +49,7 @@ function addCommand(command, i) {
             if (key === 'name') updateContextMenuItem(command)
         })
     })
-    document.body.appendChild(element)
+    document.body.insertBefore(element, template)
 }
 
 function store(command, i) {
