@@ -8,6 +8,7 @@ function createContextMenuItem(command) {
         title: commandTitle(command),
         type: "normal",
         contexts: ['all'], // ['video','link'], // FIXME TODO
+//         contexts: ['video','link'], // FIXME TODO
         onclick: clickedContextMenuItem,
     }, function () {
         var err = chrome.runtime.lastError

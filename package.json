@@ -10,6 +10,7 @@
     "author": "",
     "license": "none",
     "dependencies": {
+        "pty.js": "^0.3.0",
         "term.js": "^0.0.7",
         "node-uuid": "^1.4.3",
         "express": "^4.13.3",

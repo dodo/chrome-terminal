@@ -35,9 +35,11 @@ function onMessage(message, push, done) {
         var term = spawn(message.spawn, message.args, message.opts)
         term.on('error', function (err) {
             console.error("command '%s' errored:", message.spawn, err)
+            if (term._emittedClose) return
             native.output.write({id:id,error:err.stack || err.message || err})
         })
         term.on('data', function (data) {
+            if (term._emittedClose) return
             native.output.write({id:id,data:data.toString('utf-8')})
         })
         term.on('close', function () {
