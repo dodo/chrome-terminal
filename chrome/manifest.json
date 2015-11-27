@@ -3,12 +3,6 @@
     "version": "0.0.0",
     "description": "foobar",
 
-    "app": {
-        "launch": {
-            "local_path": "terminal.html"
-        }
-    },
-
     "incognito": "spanning",
     "permissions": [
         "nativeMessaging",
@@ -21,6 +15,11 @@
             "util.js",
             "background.js"
         ]
+    },
+
+    "page_action": {
+        "default_title": "terminal",
+        "default_popup": "popup.html"
     },
 
     "icons": {

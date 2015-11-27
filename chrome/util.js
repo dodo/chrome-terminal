@@ -36,18 +36,20 @@ function removeContextMenuItem(command) {
     })
 }
 
-function clickedContextMenuItem(ev) { // command could have changed by now
+function clickedContextMenuItem(ev, tab) { // command could have changed by now
     var commands = JSON.parse(localStorage['commands'] || '[]')
     for (var i = 0, len = commands.length; i < len ; i++) {
         var command = commands[i]
         if (command.id == ev.menuItemId) {
-            executeCommand(command, ev)
+            var exe = executeCommand(tab, command, ev)
+            if (exe && typeof onExecution === 'function')
+                onExecution(exe)
             break
         }
     }
 }
 
-function executeCommand(command, ev) {
+function executeCommand(tab, command, ev) {
     console.log('execute', command)
 
     var port = chrome.runtime.connectNative('localhost.command.execute')
@@ -80,6 +82,8 @@ function executeCommand(command, ev) {
     if (!message.spawn) return
     console.log('post message', message)
     port.postMessage(message)
+    message.port = port
+    message.tab = tab
     return message
 }
 

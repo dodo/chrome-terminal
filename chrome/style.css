@@ -27,10 +27,10 @@ input {
 }
 #terminal {
     position: fixed;
-    top: 38px;
     bottom: 0;
     right: 0;
     left: 0;
+    top: 0;
     font-family: monospace;
     font-size: 10px;
 }
