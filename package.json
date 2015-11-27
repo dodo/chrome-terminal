@@ -1,9 +1,9 @@
 {
     "name": "chrome-terminal",
     "version": "1.0.0",
-    "description": "",
-    "author": "",
-    "license": "none",
+    "description": "start console commands from the context menu of your browser",
+    "author": "dodo (https://github.com/dodo)",
+    "license": "MIT",
     "dependencies": {
         "node-uuid": "^1.4.3",
         "pty.js": "^0.3.0",

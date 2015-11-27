@@ -1,7 +1,7 @@
   {
     "name": "terminal",
     "version": "0.0.0",
-    "description": "foobar",
+    "description": "start console commands from the context menu of your browser",
 
     "incognito": "spanning",
     "permissions": [
