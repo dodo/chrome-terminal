@@ -4,6 +4,12 @@ set -e
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
+if [ "none$1" == "none" ]; then
+  echo "extension id is missing!"
+  echo "usage: ./install.sh extensionId"
+  exit -1
+fi
+
 
 if [ $(uname -s) == 'Darwin' ]; then
   echo "This is not for MAC"
@@ -43,6 +49,7 @@ cp "$DIR/$HOST_NAME.json" "$TARGET_DIR"
 # Update host path in the manifest.
 HOST_PATH=$DIR/execute.js
 sed -i -e "s|HOST_PATH|$HOST_PATH|" $TARGET_DIR/$HOST_NAME.json
+sed -i -e "s|EXTENSION_ID|$1|"      $TARGET_DIR/$HOST_NAME.json
 
 # Set permissions for the manifest so that all users can read it.
 chmod o+r $TARGET_DIR/$HOST_NAME.json
