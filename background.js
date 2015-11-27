@@ -29,7 +29,7 @@ chrome.runtime.onConnect.addListener(function (port) {
 
 
 function onExecution(exe) {
-    exe.playback = []
+    exe.playback = [[exe.spawn].concat(exe.args).join(' ')+'\n\r']
     executions[exe.tab.id] = exe
     chrome.pageAction.setPopup({
         popup: 'popup.html#' + exe.tab.id,
