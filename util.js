@@ -84,6 +84,10 @@ function executeCommand(tab, command, ev) {
     port.postMessage(message)
     message.port = port
     message.tab = tab
+    message.connected = true
+    port.onDisconnect.addListener(function () {
+        message.connected = false
+    })
     return message
 }
 

@@ -9,21 +9,24 @@ var executions = {}
 
 chrome.runtime.onConnect.addListener(function (port) {
     var tabid = undefined
+    var connected = true
     port.onMessage.addListener(function (message) {
         if (message.type === 'tab') {
             tabid = message.id
             ports[tabid] = port
             var exe = executions[tabid]
             if (exe) exe.playback.forEach(function (data) {
-                port.postMessage(data)
+                if (connected) port.postMessage(data)
             })
         } else if (message.type === 'input') {
             var exe = executions[tabid]
-            if (exe) exe.port.postMessage({input:message.data, id:exe.id})
+            if (exe && exe.connected)
+                exe.port.postMessage({input:message.data, id:exe.id})
         }
     })
     port.onDisconnect.addListener(function () {
         if (ports[tabid]) delete ports[tabid]
+        connected = false
     })
 })
 
